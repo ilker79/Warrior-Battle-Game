@@ -6,7 +6,8 @@ namespace WarriorBattle
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("FIGHT!")
+            Warrior warrior1 = new Warrior();
+            Console.WriteLine(Warrior.GetAttack);
         }
     }
 }
