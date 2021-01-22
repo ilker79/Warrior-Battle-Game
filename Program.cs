@@ -9,8 +9,8 @@ namespace WarriorBattle
             Warrior player1 = new Warrior("Ilker");
             Warrior player2 = new Warrior("Steve");
 
-            Console.WriteLine(player1.GetAttack());
-            
+            Console.WriteLine(player1.GetBlock());
+
         }
     }
 }
