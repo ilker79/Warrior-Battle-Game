@@ -19,15 +19,15 @@ class Warrior
     public int GetAttack()
     {
         Random rnd = new Random();
-        int atk = rnd.Next(0, MaxAttack);
-        return atk;
+        int attack = rnd.Next(0, MaxAttack);
+        return attack;
     }
 
     public int GetBlock()
     {
         Random rnd = new Random();
-        int blk = rnd.Next(0, MaxBlock);
-        return blk;
+        int block = rnd.Next(0, MaxBlock);
+        return block;
     }
 
     public void ApplyDamage(int damage)
@@ -36,16 +36,7 @@ class Warrior
         Health -= damage;
     }
 
-    public int HandleAttack(string warrior1, string warrior2)
-    {
-        int attack = warrior1.GetAttack();
-        int block = warrior2.getBlock();
-        int damage = attack - block;
-        if (damage > 0)
-        {
-            ApplyDamage(damage);
-        }
-    }
+    
 
 
 
