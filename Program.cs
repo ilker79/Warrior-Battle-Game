@@ -6,8 +6,11 @@ namespace WarriorBattle
     {
         static void Main(string[] args)
         {
-            Warrior warrior1 = new Warrior();
-            Console.WriteLine(Warrior.GetAttack);
+            Warrior player1 = new Warrior("Ilker");
+            Warrior player2 = new Warrior("Steve");
+
+            Console.WriteLine(player1.GetAttack());
+            
         }
     }
 }
