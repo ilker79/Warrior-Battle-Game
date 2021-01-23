@@ -4,9 +4,9 @@ class Warrior
 {
 
     string Name;
-    int Health = 100;
-    int MaxAttack = 100;
-    int MaxBlock = 100;
+    public int Health;
+    int MaxAttack;
+    int MaxBlock;
 
     public Warrior(string name, int health, int maxAttack, int maxBlock)
     {
@@ -39,7 +39,7 @@ class Warrior
     public static void HandleAttack(Warrior warriorA, Warrior warriorB)
     {
         int atck = warriorA.GetAttack();
-        Console.WriteLine($"{warriorA.Name} attacks with {atck}");
+        Console.WriteLine($"{warriorA.Name} attacks with {atck}.");
         int blck = warriorB.GetBlock();
         Console.WriteLine($"{warriorB.Name} blocks with {blck}. ");
 
@@ -48,7 +48,7 @@ class Warrior
         {
             Console.Write($"{warriorB.Name} recieved {dmg} damage. ");
             warriorB.ApplyDamage(dmg);
-            Console.WriteLine($"{warriorB.Name} has {warriorB.Health} health left");
+            Console.WriteLine($"{warriorB.Name} has {warriorB.Health} health left.");
         }
         Console.ReadKey(true);
         Console.WriteLine();

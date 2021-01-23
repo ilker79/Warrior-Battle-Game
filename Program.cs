@@ -15,7 +15,7 @@ namespace WarriorBattle
             string playerSecond = Console.ReadLine();
             Warrior player2 = new Warrior(playerSecond, 100, 40, 100);
 
-            Console.WriteLine($"Thus begins a battle of two great warriors; {playerFirst} and {playerSecond}");
+            Console.WriteLine($"Thus begins a battle of two great warriors; {playerFirst}(Health:{player1.Health}) and {playerSecond}(Health:{player2.Health})");
             Console.WriteLine("Press any key to start the Battle and countinue after each attack.");
             Console.ReadKey(true);
 
