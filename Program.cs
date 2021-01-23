@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 
 namespace WarriorBattle
 {
@@ -6,23 +7,22 @@ namespace WarriorBattle
     {
         static void Main(string[] args)
         {
-            Warrior player1 = new Warrior("Ilker");
-            Warrior player2 = new Warrior("Steve");
+            Console.WriteLine("Type the name of the first player and press Enter:");
+            string playerFirst = Console.ReadLine();
+            Warrior player1 = new Warrior(playerFirst, 100, 60, 100);
 
-            HandleAttack(player1, player2);
-            
+            Console.WriteLine("Type the name of the second player and press Enter:");
+            string playerSecond = Console.ReadLine();
+            Warrior player2 = new Warrior(playerSecond, 100, 40, 100);
+
+            Console.WriteLine($"Thus begins a battle of two great warriors; {playerFirst} and {playerSecond}");
+            Console.WriteLine("Press any key to start the Battle and countinue after each attack.");
+            Console.ReadKey(true);
+
+            Warrior.Battle(player1, player2);
 
         }
 
-        public static void HandleAttack(Warrior player1, Warrior player2)
-    {
-        int atk = player1.GetAttack();
-        int blk = player2.GetBlock();
-        int damage = atk - blk;
-        if (damage > 0)
-        {
-           player2.ApplyDamage(damage);
-        }
-    }
+
     }
 }

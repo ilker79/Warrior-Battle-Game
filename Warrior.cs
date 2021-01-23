@@ -1,48 +1,77 @@
 using System;
+
 class Warrior
 {
-    //these are states
-    public string Name;
-    public int Health;
-    public int MaxAttack = 100;
-    public int MaxBlock = 100;
-    public Warrior(string name)
-    {
 
+    string Name;
+    int Health = 100;
+    int MaxAttack = 100;
+    int MaxBlock = 100;
+
+    public Warrior(string name, int health, int maxAttack, int maxBlock)
+    {
+        Health = health;
+        MaxAttack = maxAttack;
+        MaxBlock = maxBlock;
         Name = name;
-        Health = 100;
-        Console.WriteLine($"Our hero {Name} has entered");
-        // MaxAttack;
-        // MaxBlock;
     }
 
     public int GetAttack()
     {
         Random rnd = new Random();
-        int attack = rnd.Next(0, MaxAttack);
-        return attack;
+        int randomA = rnd.Next(0, MaxAttack);
+        return randomA;
+
     }
 
     public int GetBlock()
     {
         Random rnd = new Random();
-        int block = rnd.Next(0, MaxBlock);
-        return block;
+        int randomB = rnd.Next(0, MaxBlock);
+        return randomB;
     }
 
     public void ApplyDamage(int damage)
     {
-
         Health -= damage;
     }
 
-    
+    public static void HandleAttack(Warrior warriorA, Warrior warriorB)
+    {
+        int atck = warriorA.GetAttack();
+        Console.WriteLine($"{warriorA.Name} attacks with {atck}");
+        int blck = warriorB.GetBlock();
+        Console.WriteLine($"{warriorB.Name} blocks with {blck}. ");
 
+        int dmg = atck - blck;
+        if (dmg > 0)
+        {
+            Console.Write($"{warriorB.Name} recieved {dmg} damage. ");
+            warriorB.ApplyDamage(dmg);
+            Console.WriteLine($"{warriorB.Name} has {warriorB.Health} health left");
+        }
+        Console.ReadKey(true);
+        Console.WriteLine();
+    }
 
-
-
-
-
+    public static void Battle(Warrior warrior1, Warrior warrior2)
+    {
+        while (true)
+        {
+            HandleAttack(warrior1, warrior2);
+            if (warrior2.Health < 0)
+            {
+                Console.WriteLine($"{warrior2.Name}, it was a pleasure to fought against you but you lost!");
+                break;
+            }
+            HandleAttack(warrior2, warrior1);
+            if (warrior1.Health < 0)
+            {
+                Console.WriteLine($"{warrior1.Name}, it was a pleasure to fought against you but you lost!");
+                break;
+            }
+        }
+    }
 
 
 }
