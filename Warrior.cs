@@ -1,5 +1,5 @@
 using System;
-
+//Next try to create interface
 class Warrior
 {
 
