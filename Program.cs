@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading;
+//try and create interfaces
 
 namespace WarriorBattle
 {
