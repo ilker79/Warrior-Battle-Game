@@ -1,4 +1,4 @@
-Another School of Code adventure which I enjoyed creating.
+Another School of Code adventure which I enjoyed creating, 3rd week.
 
 This is a simple console game written in C#. You can started the game on the terminal/console with "dotnet run". Then, you will be asked enter the players names. Players will attack and block the attacks. If attack more than the block, difference will be deducted from the blockers life and so on. Eventually if one players life will be <= 0 that player will loose the game.  
 
